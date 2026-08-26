@@ -1,0 +1,93 @@
+---
+title: "Conditional_Probability_Workshop"
+format: html
+editor: visual
+---
+
+```{r}
+
+library(tidyverse)
+library(here)
+library(ggplot2)
+library(sf)
+```
+
+```{r}
+healthcare_data <- read_csv(here("data/healthcare-dataset-stroke-data.csv"))
+```
+
+```{r}
+ggplot(data = healthcare_data, aes(x = hypertension, fill = factor(stroke))) +
+  geom_bar(position = "dodge") +
+  theme_bw()
+  
+```
+
+```{r}
+
+ggplot(data = healthcare_data, aes(x = factor(stroke), y = avg_glucose_level)) +
+  geom_boxplot
+```
+
+P(B)
+
+```{r}
+
+healthcare_data %>% 
+  count(stroke) %>% 
+  mutate(percent = n / sum(n))
+  
+
+```
+
+```{r}
+probability_disease <- healthcare_data %>% 
+  count(stroke) %>% 
+  mutate(percent = n / sum(n)) %>% 
+  filter(stroke == 1) %>% 
+  pull(percent)
+```
+
+P(A\|B)
+
+```{r}
+healthcare_data %>% 
+  count(stroke, hypertension) %>% 
+  group_by(hypertension) %>% 
+  mutate(percent = n / sum(n))
+
+```
+
+```{r}
+probability_positive_result_given_disease <- healthcare_data %>% 
+  count(stroke, hypertension) %>% 
+  group_by(stroke) %>% 
+  mutate(percent = n / sum(n)) %>% 
+  filter(stroke == 1, hypertension == 1) %>% 
+  pull(percent)
+```
+
+P(A)
+
+```{r}
+healthcare_data %>% 
+  count(hypertension) %>% 
+  mutate(percent = n / sum(n))
+```
+
+```{r}
+probability_positive_test_result <- healthcare_data %>% 
+  count(hypertension) %>% 
+  mutate(percent = n / sum(n)) %>% 
+  filter(hypertension == 1) %>% 
+  pull(percent)
+```
+
+P(B/A)
+
+```{r}
+
+(probability_positive_result_given_disease * probability_disease) / probability_positive_test_result
+
+
+```
