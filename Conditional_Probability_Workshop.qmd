@@ -26,13 +26,13 @@ ggplot(data = healthcare_data, aes(x = hypertension, fill = factor(stroke))) +
 ```{r}
 
 ggplot(data = healthcare_data, aes(x = factor(stroke), y = avg_glucose_level)) +
-  geom_boxplot
+  geom_boxplot()
+
 ```
 
 P(B)
 
 ```{r}
-
 healthcare_data %>% 
   count(stroke) %>% 
   mutate(percent = n / sum(n))
