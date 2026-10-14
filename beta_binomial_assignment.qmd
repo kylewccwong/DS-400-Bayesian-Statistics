@@ -27,7 +27,7 @@ Every four years, Americans go to the polls to cast their vote for President of 
 plot_beta(45, 55)
 ```
 
-dfsStatement = "Before any new poll, we believe there's a 95% chance Michelle's true support π is between 35% and 55%, with 45% as our single best guess."
+Statement = "Before any new poll, we believe there's a 95% chance Michelle's true support π is between 35% and 55%, with 45% as our single best guess."
 
 Prior effective sample size = 100 pseudo voters
 
