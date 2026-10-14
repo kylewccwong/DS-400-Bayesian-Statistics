@@ -28,7 +28,7 @@ Histogram of finished swim times
 
 ```{r}
 ggplot(data = swim, aes(x = finish_time_min))+
-  geom_histogram()
+  geom_histogram()+
   labs()
 ```
 
@@ -63,7 +63,7 @@ Boxplot of finish times by event
 
 ```{r}
 ggplot(data = swim, aes(x = finish_time_min, y = race_name, fill = race_name)) +
-  geom_boxplot()
+  geom_boxplot() +
   theme(legend.position = "none")
 ```
 
@@ -100,10 +100,10 @@ what is the probability of completing the Alcatraz Sharkfest Swim
 probability_complete_alcatraz <- swim_wide %>% 
   count(finished_alcatraz) %>% 
   mutate(percent = n / sum(n)) %>% 
-  filter(finished_alcatraz == "Yes") %>% 
-  pull(percent)
+  filter(finished_alcatraz == "Yes") 
+  #pull(percent)
 
-
+probability_complete_alcatraz 
 ```
 
 P(A\|B)
@@ -128,6 +128,8 @@ probability_complete_waikiki <- swim_wide %>%
   mutate(percent = n / sum(n)) %>% 
   filter(finished_waikiki == "Yes") %>% 
   pull(percent)
+
+probability_complete_waikiki
 ```
 
 P(B\|A)
