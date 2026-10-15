@@ -30,7 +30,7 @@ ggplot(data = healthcare_data, aes(x = factor(stroke), y = avg_glucose_level)) +
 
 ```
 
-P(B)
+P(B) - Probability of someone having a stroke vs not having one
 
 ```{r}
 healthcare_data %>% 
@@ -40,23 +40,27 @@ healthcare_data %>%
 
 ```
 
+Turn P(B) into a percentage
+
 ```{r}
 probability_disease <- healthcare_data %>% 
   count(stroke) %>% 
   mutate(percent = n / sum(n)) %>% 
-  filter(stroke == 1) %>% 
-  pull(percent)
+  filter(stroke == 1) 
+
 ```
 
-P(A\|B)
+P(A\|B) or Probability of someone getting hypertension given they had a stroke
 
 ```{r}
 healthcare_data %>% 
   count(stroke, hypertension) %>% 
-  group_by(hypertension) %>% 
+  group_by(stroke) %>% 
   mutate(percent = n / sum(n))
 
 ```
+
+P(A\|B) as percent
 
 ```{r}
 probability_positive_result_given_disease <- healthcare_data %>% 
@@ -67,13 +71,15 @@ probability_positive_result_given_disease <- healthcare_data %>%
   pull(percent)
 ```
 
-P(A)
+P(A) - Probability of having hypertension
 
 ```{r}
 healthcare_data %>% 
   count(hypertension) %>% 
   mutate(percent = n / sum(n))
 ```
+
+P(A) as Percent
 
 ```{r}
 probability_positive_test_result <- healthcare_data %>% 
@@ -83,7 +89,7 @@ probability_positive_test_result <- healthcare_data %>%
   pull(percent)
 ```
 
-P(B/A)
+P(B\|A) - Probability of someone having a stroke given they have hypertension
 
 ```{r}
 
