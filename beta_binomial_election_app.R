@@ -36,7 +36,7 @@
 ## Alpha - 240
 ## Beta - 160
 ## mean - 0.6
-## Credible interval- 95%
+## Credible interval- 
 ## ------------------------------------------------------------
 ## Q2 (Tab 1) -- Starting from Michelle's actual prior (reset to
 ## Beta(45, 55)), scale both alpha and beta up by 4x (Beta(180, 220))
@@ -46,9 +46,10 @@
 ##
 ## Your answer:
 ## 
-## Maintaining the previous ratio while scaling the values up will not
-## change the average, but it increases the SD by more than 2x, shrinking
-## the width of the 95% credible interval.
+## Maintaining the previous ratio while scaling the values up will 
+## not change the best guess because it kept the same ratio, however,
+## the interval will become narrower and more precise because there 
+## is more data available to go off of.
 ## ------------------------------------------------------------
 ## Q3 (Tab 1) -- Set alpha = beta = 1 (the flat prior). What are the
 ## mean, mode, and SD? Now try alpha = beta = 0.5. Both cases report
@@ -60,11 +61,9 @@
 ## Your answer:
 ##
 ## At alpha = beta= 0.5, mean is 0.5, SD is 0.354, and at alpha = beta = 1, 
-## mean is 1, and SD is 0.289. Beta has no single mode at (1,1). Both of these
-## beta distributions barely have any data to work with. In Beta(0.5,0.5),
-##  there are 2 modes that are undefined near 0 and 1, while in beta(1,1),
-## it is a flat curve because there is an equal probability across all percentage
-## values.
+## mean is 0.5, and SD is 0.289. Beta has no single mode at (1,1). Beta(1,1) 
+## is a flat curve and therefore has uniform plausibility. Beta(0.5,0.5) 
+## piles up near 0 and 1, meaning it also has no specific mode. 
 ## ------------------------------------------------------------
 ## Q4 (Tab 2) -- Set alpha = beta = 1, then n = 50, y = 30. Compare the
 ## Posterior curve to the Scaled Likelihood curve. What do you notice?
@@ -74,7 +73,9 @@
 ##
 ## If alpha and beta = 1(flat prior), the posterior curve and scaled 
 ## likelihood become identical because the posterior has no real prior 
-## data to draw from.
+## data to draw from. The posterior curve is supposed to be a combo of the
+## prior and scaled likelihood, so a flat curve leads to posterior solely using
+## the scaled likelihood.
 ## ------------------------------------------------------------
 ## Q5 (Tab 2) -- Reset to the text's numbers (alpha=45, beta=55, n=50,
 ## y=30). Read off the weight sentence under the posterior summary. Now
@@ -83,8 +84,15 @@
 ## overrule a moderately confident prior?
 ##
 ## Your answer:
+## Weight sentence- "your prior (worth ~100 pseudo-voters) contributes 67% of
+## the weight, and your new poll (n = 50 voters) contributes the other 33%."
 ##
-##
+## The weight shifts more towards the scaled likelihood because there is
+## so much more new data compared to the prior. The messaging of this visual
+## tells us the importance of amount of data considered. Shifting a moderately
+## confident prior would require a large amount of new data relative to the 
+## prior. 
+
 ## ------------------------------------------------------------
 ## Q6 (Tab 2) -- Using the text's numbers (alpha=45, beta=55, n=50,
 ## y=30), check "Show frequentist 95% confidence interval." Compare the
@@ -94,7 +102,9 @@
 ##
 ## Your answer:
 ##
-##
+## Bayesian credibility interval measures the probability of something, taking
+## priors and new data into consideration while confidence interval treats
+## the true value as fixed, meaning it tests accuracy of the interval over trials.
 ## ------------------------------------------------------------
 ## Q7 (Tab 2) -- Set alpha = 90, beta = 10 (strong prior belief support
 ## is ~90%). Now set n = 200, y = 40 (20% support in the new poll -- a
@@ -103,8 +113,12 @@
 ## weight sentence? Why did the data win here when it didn't in Q5?
 ##
 ## Your answer:
-##
-##
+## 
+## The posterior ends up closer to the data. This visual does match the weight 
+## sentence. The data won in this question because the amount of new data 
+## outweighs our prior pseudo data. Regardless of how confident we were in our
+## prior, the mass amount of new data pulls our posterior
+## harder to the scaled likelihood.
 ## ------------------------------------------------------------
 ## Q8 (Reflection -- no fixed answer) -- The app's posterior treats
 ## every respondent in the poll equally, regardless of when the
@@ -116,8 +130,12 @@
 ## noisily varying around a fixed number.
 ##
 ## Your answer:
-##
-##
+## 
+## Campaign tracking is an ever changing process and one that requires
+## the most up to date data to remain useful. New stories, regular 
+## statements, interview, press conferences and polling are ongoing. 
+## Perhaps weighing the prior according to how recent the data is rather than
+## amount of data could be useful.
 ## ============================================================
 
 
