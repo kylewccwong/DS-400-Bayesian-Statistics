@@ -1,8 +1,8 @@
 # DS 400 Bayesian Statistics – Final Project Proposal
  
-**Name:**
+Kyle Wong
  
-**Date:**
+11/24
  
 ---
  
@@ -18,7 +18,7 @@ What do you want to find out? Phrase it as a question. Mention the place and tim
  
 <!-- Write your answer below this line -->
  
- 
+ For my final project, I would like to continue Aloha Harvest research and utilize our bayes regression model and potentially BART model to predict weekly pickup poundage per organization and organization type. Using our data from Aloha Harvest, Victoria gave us the earliest data available stemming from 2008. 
  
  
  
@@ -30,8 +30,7 @@ List each dataset and where it comes from (agency, website, link). Note the form
  
 <!-- Write your answer below this line -->
  
- 
- 
+ Victoria did us the liberty of doing major cleaning and coverting the dataset into csv's. 
  
  
 ---
@@ -43,7 +42,7 @@ What methods will you actually run? For example, bayesian logistic regression, n
 <!-- Write your answer below this line -->
  
  
- 
+ We will use the bayes regression model and BART model. 
  
  
 ---
@@ -52,14 +51,12 @@ What methods will you actually run? For example, bayesian logistic regression, n
  
 Give the link below. Add a sentence or two on why each source is relevant to your project.
  
-1. 
+1. https://www.sciencedirect.com/science/article/abs/pii/S0038012116300453
+2.  https://arxiv.org/pdf/2202.01347
+3. https://arxiv.org/pdf/2511.04865
  
-2. 
+4. https://www.researchgate.net/publication/364337065
  
-3. 
- 
-4. 
- 
-5. 
+5.  https://doi.org/10.3390/nu17091461
  
 ---
