@@ -52,6 +52,7 @@ What methods will you actually run? For example, bayesian logistic regression, n
 Give the link below. Add a sentence or two on why each source is relevant to your project.
  
 1. https://www.sciencedirect.com/science/article/abs/pii/S0038012116300453
+   
 2.  https://arxiv.org/pdf/2202.01347
 3. https://arxiv.org/pdf/2511.04865
  
